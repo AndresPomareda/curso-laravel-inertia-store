@@ -1,8 +1,8 @@
 <template>
     <app-layout>
         <jet-form-section @submitted="submit" class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            <template #title> Create Category </template>
-            <template #description> Create a Category </template>
+            <template #title> Edit Category </template>
+            <template #description> Edit Category </template>
             <template #form>
                 <div class="col-span-6">
                     <jet-label>Title</jet-label>
@@ -17,7 +17,7 @@
                 </div>
             </template>
             <template #actions>
-                <jet-button type="submit">Send</jet-button>
+                <jet-button type="submit">Actualizar</jet-button>
             </template>
         </jet-form-section>
     </app-layout>

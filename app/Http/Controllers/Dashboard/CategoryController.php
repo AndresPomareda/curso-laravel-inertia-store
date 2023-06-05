@@ -32,7 +32,7 @@ class CategoryController extends Controller
      */
     public function store(Store $request)
     {
-        sleep(5);
+      //sleep(5);
       Category::create($request->validated());
       return to_route('category.index')->with('message',"Created category successfully");
    }
@@ -52,7 +52,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, Category $category)
+    public function update(Store $request, Category $category)
     {
         $category->update($request->validated());
         return redirect()->route('category.index')->with('message',"Updated category successfully");
