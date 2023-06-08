@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('/category', CategoryController::class);
+    //Route::resource('/category', CategoryController::class);
+    //Route::resource('/post', PostController::class);
+
+    Route::resource('/category', App\Http\Controllers\Dashboard\CategoryController::class);
+    Route::resource('/post', App\Http\Controllers\Dashboard\PostController::class);
 
 });
 
