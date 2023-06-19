@@ -2,7 +2,7 @@
     <app-layout>
         <jet-form-section @submitted="submit" class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             <template #title> Create Post </template>
-            <template #description> Create a Post </template>
+            <template #description> Create a Post ( Create )</template>
             <template #form>
                 <div class="col-span-6">
                     <jet-label>Title</jet-label>
@@ -57,6 +57,19 @@
                         <option v-for="c in categories" :value="c.id" :key="c.id">{{ c.title }}</option>
                     </select>
                     <jet-input-error :message="errors.category_id" />
+                </div>
+                <div class="col-span-2">
+                    <o-field class="file">
+                        <o-upload v-model="file">
+                        <o-button tag="a" variant="primary">
+                            <o-icon icon="upload"></o-icon>
+                            <span>Click to upload</span>
+                        </o-button>
+                        </o-upload>
+                        <span class="file-name" v-if="file">
+                        {{ file.name }}
+                        </span>
+                    </o-field>
                 </div>
             </template>
             <template #actions>

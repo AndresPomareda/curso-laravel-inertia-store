@@ -32,11 +32,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    //Route::resource('/category', CategoryController::class);
-    //Route::resource('/post', PostController::class);
-
-    Route::resource('/category', App\Http\Controllers\Dashboard\CategoryController::class);
-    Route::resource('/post', App\Http\Controllers\Dashboard\PostController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/post', PostController::class);
+    Route::post('/post/upload/{post}', [PostController::class, 'upload'])->name('post.upload');
+    Route::delete('post/image/delete/{post}', [PostController::class, 'imageDelete'])->name('post.image-delete');
 
 });
 

@@ -9,6 +9,8 @@
                     <jet-input class="w-full" type="text" v-model="form.title" />
                     <jet-input-error :message="errors.title" />
                 </div>
+
+
                 <div class="col-span-6">
                     <jet-label value="Slug" />
                     <jet-input class="w-full" type="text" v-model="form.slug" />
@@ -16,7 +18,7 @@
                 </div>
             </template>
             <template #actions>
-                <jet-button type="submit">Grabar</jet-button>
+                <jet-button type="submit">Send</jet-button>
             </template>
         </jet-form-section>
     </app-layout>

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-//use App\Http\Requests\Category\Put;
+use App\Http\Requests\Category\Put;
 use App\Models\Category;
 use Illuminate\Http\Request;
+
 use App\Http\Requests\Category\Store;
 
 class CategoryController extends Controller
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(4);
+        $categories = Category::paginate(2);
         return inertia("Dashboard/Category/Index",compact("categories"));
     }
 
@@ -52,7 +53,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Store $request, Category $category)
+    public function update(Put $request, Category $category)
     {
         $category->update($request->validated());
         return redirect()->route('category.index')->with('message',"Updated category successfully");

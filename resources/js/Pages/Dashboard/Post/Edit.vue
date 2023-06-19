@@ -2,7 +2,7 @@
     <app-layout>
         <jet-form-section @submitted="submit" class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             <template #title> Editar Post </template>
-            <template #description> Editar un Post </template>
+            <template #description> Editar un Post ( Editar )</template>
             <template #form>
                 <div class="col-span-6">
                     <jet-label>Title</jet-label>
