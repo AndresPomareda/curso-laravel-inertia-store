@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(2);
+        $categories = Category::paginate(10);
         return inertia("Dashboard/Category/Index",compact("categories"));
     }
 
@@ -38,7 +38,6 @@ class CategoryController extends Controller
       return to_route('category.index')->with('message',"Created category successfully");
    }
 
-
     /**
      * Display the specified resource.
      */
@@ -51,7 +50,6 @@ class CategoryController extends Controller
     {
         return inertia("Dashboard/Category/Edit", compact('category'));
     }
-
 
     public function update(Put $request, Category $category)
     {

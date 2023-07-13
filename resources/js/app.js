@@ -18,6 +18,9 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 // Material Design icons
 import '@mdi/font/css/materialdesignicons.min.css';
 
+// vue-debounce
+import { vue3Debounce } from 'vue-debounce'
+
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
@@ -29,6 +32,7 @@ createInertiaApp({
             .use(Oruga)
             .use(CKEditor)
             .use(ZiggyVue, Ziggy)
+            .directive('debounce', vue3Debounce({ lock: true }))
             .mount(el);
     },
     progress: {
